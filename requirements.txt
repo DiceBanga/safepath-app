@@ -1,0 +1,52 @@
+# SafePath - AI-Powered Hazard Detection System
+# Python 3.9+ Dependencies
+
+# Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+torchsegmentation>=0.1.0
+
+# Image Processing
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0
+Pillow>=10.0.0
+albumentations>=1.3.0
+
+# Data Science
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# PDF Generation
+reportlab>=4.0.0
+
+# Model Export
+onnx>=1.14.0
+onnxruntime>=1.15.0
+
+# Utilities
+tqdm>=4.65.0
+PyYAML>=6.0
+python-dotenv>=1.0.0
+
+# Logging
+tensorboard>=2.13.0
+wandb>=0.15.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Development
+black>=23.0.0
+isort>=5.12.0
+flake8>=6.1.0
+mypy>=1.4.0
+
+# Jupyter
+jupyter>=1.0.0
+ipywidgets>=8.1.0

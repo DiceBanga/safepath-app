@@ -1,0 +1,76 @@
+# SafePath Configuration
+
+# Model Configuration
+model:
+  name: "deeplabv3plus_mobilenetv3"
+  num_classes: 19
+  output_stride: 16
+  pretrained_backbone: true
+  pretrained_weights: "cityscapes"
+  
+# Training Configuration
+training:
+  batch_size: 8
+  num_epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  momentum: 0.9
+  lr_scheduler: "polynomial"
+  early_stopping_patience: 10
+  
+# Data Configuration
+data:
+  input_size: [480, 960]
+  num_workers: 4
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  
+# Augmentation
+augmentation:
+  brightness_reduction: [0.4, 0.6]
+  gaussian_noise_std: [0.01, 0.05]
+  motion_blur_kernel: [3, 7]
+  horizontal_flip: true
+  random_crop: true
+  
+# Inference Configuration
+inference:
+  target_fps: 5
+  use_quantization: true
+  device: "npu"  # npu, cuda, cpu
+  
+# Hazard Classes
+hazard_classes:
+  safe_path: 0
+  road: 1
+  sidewalk: 2
+  pothole: 3
+  pole: 4
+  obstacle: 5
+  water_puddle: 6
+  uneven_terrain: 7
+  step: 8
+  # Additional classes from Cityscapes
+  building: 9
+  wall: 10
+  fence: 11
+  guard_rail: 12
+  bridge: 13
+  tunnel: 14
+  person: 15
+  rider: 16
+  car: 17
+  vegetation: 18
+  
+# Alert Configuration
+alerts:
+  audio_enabled: true
+  visual_enabled: true
+  confidence_threshold: 0.7
+  
+# Report Configuration
+report:
+  output_dir: "assets/reports"
+  include_snapshots: true
+  include_statistics: true
